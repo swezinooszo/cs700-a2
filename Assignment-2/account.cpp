@@ -7,19 +7,19 @@
 #include "account.h"
 #include<cstdlib>
 
-Customer* Account::get_customer(){
+Customer* Account::get_customer() const{
     return customer;
 }
-double Account::get_balance(){
+double Account::get_balance() const{
     return balance;
 }
-int Account::get_account_number(){
+int Account::get_account_number() const{
     return account_number;
 }
-vector<Transaction> Account::get_transaction(){
+vector<Transaction> Account::get_transaction() const{
     return transaction_array;
 }
-Account_type Account::get_account_type(){
+Account_type Account::get_account_type() const{
     return account_type;
  }
 void Account::set_customer(Customer* c){
