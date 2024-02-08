@@ -1,3 +1,9 @@
+/** @file bankUtil.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "bankUtil.h".
+*/
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -6,37 +12,6 @@
 #include "checking_account.h"
 #include <cmath> 
 
-bool validateBankAccountNumber(int accNumber,Bank bank){
-    std::vector<Account*> accounts = bank.get_accounts();
-    bool isAccountValid;
-    for (size_t i = 0; i < accounts.size(); ++i) {
-    
-        if(accounts[i]->get_account_number() == accNumber){
-            isAccountValid = true;
-            break;
-        }
-    }
-    return isAccountValid;
-}
-
-// create checking account based on entered customer details, account type and bank object to add created account.
-void createCheckingAccount(Customer* customer,Bank bank){
-    Checking_Account* checking_account = new Checking_Account();
-    Account_type accType = CHECKING;
-    checking_account->createAccount(customer,accType);
-    bank.add_account(checking_account);
-    cout << "Account: " << checking_account->get_account_number() << " Added" ;
-    cout << endl;
-}
-
-void createSavingAccount(Customer* customer,Bank bank){
-    Saving_Account* saving_account = new Saving_Account();
-    Account_type accType = SAVING;
-    saving_account->createAccount(customer,accType);
-    bank.add_account(saving_account);
-    cout << "Account: " << saving_account->get_account_number() << " Added" ;
-    cout << endl;
-}
 
 bool isLeapYear(int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
@@ -76,18 +51,14 @@ int calculateDayCount(const Date& date) {
     return days;
 }
 
-// Function to calculate simple interest based on number of days
 double calculateInterest(double amount, double rate, int numberOfDays) {
     // Convert days to years (assuming 365 days in a year)
     double years = numberOfDays / 365.0;
-    // cout << "before round years "<< years << endl; 
-    // double rounded_years = std::round(years * 100) / 100;
-    cout << "after round years "<< years << endl; 
+    cout << "years "<< years << endl; 
     // Calculate interest
     return amount * rate * years;
 }
 
-// Function to split a string into substrings based on a delimiter
 vector<string> splitString(string dateString, char toSplitValue) {
     vector<string> resultStringArray;
     istringstream iss(dateString);
@@ -108,6 +79,6 @@ Date convertStringToDate(string dateString,char toSplitValue){
         return date;
 }
 
-double roundToTwoDecimalPlaces(double num) {
-    return std::round(num * 100) / 100;
+double roundToTwoDecimalPlaces(double number) {
+    return std::round(number * 100) / 100;
 }
