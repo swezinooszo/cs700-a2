@@ -1,3 +1,10 @@
+/** @file saving_account.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "saving_account.h".
+*/
+
+
 #include "saving_account.h"
 #include <iostream>
 #include "bankUtil.h"
@@ -21,8 +28,8 @@ double Saving_Account::add_interest(Date startDate,Date endDate,double amount,do
     int startDayCount = calculateDayCount(startDate);
     int endDayCount = calculateDayCount(endDate);
     // Calculate the difference in days
-    int daysDifference = endDate - startDate;
-
+    int daysDifference = endDayCount - startDayCount;
+    cout << "daysDifference "<< daysDifference << endl;
     double interested_amount = calculateInterest(amount, interest_rate, daysDifference);
     double rounded_interested_amount = roundToTwoDecimalPlaces(interested_amount);
     cout << "calculated interest "<< rounded_interested_amount << " amount "<<amount<<endl;
