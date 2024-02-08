@@ -8,8 +8,19 @@
 #include <iostream>
 using namespace std;
 
+/** Transaction_type is an enum class which represents different types of transactions */
 enum Transaction_type {
-    DEP, INT_CR, WD,CHKCHG,OD_PEN
+    // Data Fields
+    /** DEP is used for Deposit transaction */
+    DEP, 
+    /** INT_CR is used for Interest transaction */
+    INT_CR, 
+    /** WD is used for Withdrawl transaction */
+    WD,
+    /** CHKCHG is used for Check Charge transaction */
+    CHKCHG,
+    /** OD_PEN is used for Overdraft Penalty transaction */
+    OD_PEN
 };
 
 /** Transaction is a class which stores the all the information of a transaction */
