@@ -1,3 +1,9 @@
+/** @file bank.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "bank.h".
+*/
+
 #include <iostream>
 #include "bank.h"
 #include <vector>
@@ -204,7 +210,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
     return account_balance;
 }
 
-double Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmount,string withdrawDateString){
+bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmount,string withdrawDateString){
     bool isChargedOverDraftPenalty;
     //// retrieve account from account number 
     Account* a;
