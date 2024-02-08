@@ -1,3 +1,10 @@
+/** @file checking_account.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "checking_account.h".
+*/
+
+
 #include "checking_account.h"
 #include "bankUtil.h"
 
@@ -11,16 +18,14 @@ void Checking_Account::withdrawl(double amount){
     set_balance(balance);
 }
 
-//calculate interest base on start date, enddate, balance
 double Checking_Account::add_interest(Date startDate,Date endDate,double amount,double interest_rate){
   cout << "call add_interest function startDate "<< startDate <<" endDate "<< endDate << " amount "<<amount <<" interest_rate "<<interest_rate << endl;
-
    // Calculate the day count for each date
     int startDayCount = calculateDayCount(startDate);
     int endDayCount = calculateDayCount(endDate);
     // Calculate the difference in days
-    int daysDifference = endDate - startDate;
-
+    int daysDifference = endDayCount - startDayCount;
+    cout << "daysDifference Checking_Account "<< daysDifference << endl;
     double interested_amount = calculateInterest(amount, interest_rate, daysDifference);
     double rounded_interested_amount = roundToTwoDecimalPlaces(interested_amount);
     cout << "calculated interest "<< rounded_interested_amount << " amount "<<amount<<endl;
