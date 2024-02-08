@@ -8,16 +8,16 @@
 
 using namespace std;
 
-Transaction_type Transaction::get_transaction_type(){
+Transaction_type Transaction::get_transaction_type() const{
      return transaction_type;
 }
-double Transaction::get_amount(){
+double Transaction::get_amount() const{
      return amount;
 }
-double Transaction::get_balance(){
+double Transaction::get_balance() const{
     return balance;
 }
-Date Transaction::get_date(){
+Date Transaction::get_date() const{
      return date;
 }
 string Transaction::to_string()  {
