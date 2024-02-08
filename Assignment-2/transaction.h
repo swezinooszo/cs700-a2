@@ -53,19 +53,19 @@ class Transaction{
         /** Gets the transaction type
          * @return an enum Transaction_type value. 
         */
-        Transaction_type get_transaction_type();  
+        Transaction_type get_transaction_type() const;  
         /** Gets the amount
          * @return the amount of the transaction
         */      
-        double get_amount();
+        double get_amount() const;
          /** Gets the balance
          * @return the balance in the account at the time of the transaction
         */ 
-        double get_balance();
+        double get_balance() const;
          /** Gets the date
          * @return the transaction date
         */ 
-        Date get_date();
+        Date get_date() const;
          /** Gets the details of transaction as a string
          * @return  a string value which returns all the member variables 
         */ 
