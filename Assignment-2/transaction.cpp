@@ -5,6 +5,7 @@
 */
 #include "transaction.h"
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -33,5 +34,19 @@ string Transaction::to_string()  {
         }else if(transaction_type == OD_PEN){
              transType = "OD_PEN";
         }
-       return  transType + "  " + date.to_string() + "  $  " + std::to_string(amount) +  "  $  " + std::to_string(balance);
+     
+          // Convert 'amount' double value to string with two decimal places
+          std::string stramount = std::to_string(amount);
+          size_t decimalPos = stramount.find('.');
+          if (decimalPos != std::string::npos && decimalPos + 3 < stramount.size()) {
+               stramount.resize(decimalPos + 3);
+          }
+
+          // Convert 'balance' double value to string with two decimal places
+          std::string strbalance = std::to_string(balance);
+          size_t decimalPos1 = strbalance.find('.');
+          if (decimalPos1 != std::string::npos && decimalPos1 + 3 < strbalance.size()) {
+               strbalance.resize(decimalPos1 + 3);
+          }
+       return  transType + "  " + date.to_string() + "  $  " + stramount +  "  $  " + strbalance;
 }
