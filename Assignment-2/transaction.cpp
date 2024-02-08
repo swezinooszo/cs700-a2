@@ -1,3 +1,8 @@
+/** @file Transaction.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "Transaction.h"
+*/
 #include "transaction.h"
 #include <string>
 
@@ -28,5 +33,5 @@ string Transaction::to_string()  {
         }else if(transaction_type == OD_PEN){
              transType = "OD_PEN";
         }
-            return  transType + "  " + date.to_string() + "  $  " + std::to_string(amount) +  "  $  " + std::to_string(balance);
+       return  transType + "  " + date.to_string() + "  $  " + std::to_string(amount) +  "  $  " + std::to_string(balance);
 }
