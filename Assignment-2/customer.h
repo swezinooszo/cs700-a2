@@ -9,8 +9,15 @@
 #include <string>
 
 using namespace std;
+/** Customer_type is an enum class which represents different types of customer*/
 enum Customer_type {
-                SENIOR,ADULT,STUDENT
+          // Data Fields
+          /** SENIOR is used for senior customer */
+          SENIOR,
+          /** ADULT is used for adult customer */
+          ADULT,
+          /** ADULT is used for student customer */
+          STUDENT
 };
 /** Customer is a class that represents the customer of a bank who makes transactions such as deposit and withdraw money */
 class Customer {
