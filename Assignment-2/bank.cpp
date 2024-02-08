@@ -23,12 +23,12 @@ void Bank::add_account(Account* a){
     accounts.push_back(a);
 }
 
-std::vector<Account*> Bank::get_accounts(){
+std::vector<Account*> Bank::get_accounts() const{
     // get account from account array;
     return accounts;
 }
 
-Account* Bank::get_account(int accountNumber){
+Account* Bank::get_account(int accountNumber) const{
     Account* a;
         for (auto account : accounts) {
             if(accountNumber == account->get_account_number()){
@@ -95,7 +95,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                 else{
                     //// finding transation's date which is equal to account balance.
                     Date startDate;
-                    int balance = a->get_balance();
+                    double balance = a->get_balance();
                     for(auto transaction : transaction_list){
                         cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                         if(transaction.get_balance() == a->get_balance()){ 
@@ -172,7 +172,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                 else{
                     //// finding transation's date which is equal to account balance.
                     Date startDate;
-                    int balance = a->get_balance();
+                    double balance = a->get_balance();
                     for(auto transaction : transaction_list){
                         cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                         if(transaction.get_balance() == a->get_balance()){ 
@@ -199,6 +199,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                     Transaction transaction(DEP,amount,last_balance,depositDate);
                     checkingAccount->set_Transaction(transaction);
                     account_balance = transaction.get_balance();
+                    cout << "transaction.get_balance() "<< transaction.get_balance()<< endl;
                 }
 
             }else{
@@ -228,7 +229,7 @@ bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmo
                 Date withdrawDate = convertStringToDate(withdrawDateString,'-');
                 
                  //// ****  Overdraft Penalty ***** ////
-                int totalAmount = savingAccount -> get_balance();
+                double totalAmount = savingAccount -> get_balance();
                  //// if withdrawl amount exceed than balance, then charge overdraft penalty.
                 if(totalAmount-withdrawAmount < 0){
                     //// select overdraft penalty base on customer type
@@ -268,7 +269,7 @@ bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmo
                 Date withdrawDate = convertStringToDate(withdrawDateString,'-');
                 
                 //// ***  Overdraft Penalty **** ////
-                int totalAmount = checkingAccount -> get_balance();
+                double totalAmount = checkingAccount -> get_balance();
                 //// if withdrawl amount exceed than balance, then charge overdraft penalty.
                 if(totalAmount-withdrawAmount < 0){
                     //// select overdraft penalty base on customer type
@@ -342,7 +343,7 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 vector<Transaction> transaction_list = a->get_transaction();
                 //// find transaction's date which is equal to account balance
                 Date startDate;
-                int balance = a->get_balance();
+                double balance = a->get_balance();
                 for(auto transaction : transaction_list){
                     cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                     if(transaction.get_balance() == a->get_balance()){
@@ -404,7 +405,7 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 vector<Transaction> transaction_list = a->get_transaction();
                 //// find transaction's date which is equal to account balance
                 Date startDate;
-                int balance = a->get_balance();
+                double balance = a->get_balance();
                 for(auto transaction : transaction_list){
                     if(transaction.get_balance() == a->get_balance()){
                         //// get the date
@@ -433,9 +434,11 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 checkingAccount -> deduct_check_charge(check_charge_cents);
                 //// ****** add check charge transaction ************////
                 double lastest_balance = checkingAccount -> get_balance();
+                 cout << "checkingAccount -> get_balance() lastest_balance" << lastest_balance << endl;
                 Transaction transaction3(CHKCHG,check_charge_cents,lastest_balance,withdrawDate);
                 checkingAccount->set_Transaction(transaction3);
                 account_balance = transaction3.get_balance();
+                 cout << "transaction3.get_balance() " << transaction3.get_balance() << endl;
 
             }else{
                  cout << "not get checking acc" << endl;
