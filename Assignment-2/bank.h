@@ -23,14 +23,14 @@ class Bank{
         /** Gets the accounts
          * @return the accounts as a vector array
         */
-        std::vector<Account*> get_accounts();
+        std::vector<Account*> get_accounts() const;
 
         // Other Functions
          /** Gets an account based on account number
          * @param accountNumber the account number
          * @return an account as a pointer object
         */
-         Account* get_account(int accountNumber);
+         Account* get_account(int accountNumber) const;
         /** Add an account to the bank
          * @param account an account pointer object
         */
