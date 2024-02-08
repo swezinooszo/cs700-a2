@@ -11,8 +11,13 @@
 #include <vector>
 
 using namespace std;
+/** Account_type is an enum class which represents different types of account*/
 enum Account_type {
-                SAVING,CHECKING
+            // Data Fields
+            /** SAVING is used for saving account */
+            SAVING,
+            /** CHECKING is used for checking account */
+            CHECKING
 };
 /** Account is a class which holds the information of a customer, account's details and the transactions */
 class Account{
