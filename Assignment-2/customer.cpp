@@ -1,3 +1,9 @@
+/** @file customer.cpp
+*   @author Swe Zin Oo
+*   @date 23 Jan 2024
+*   @brief The implementation file of "customer.h".
+*/
+
 #include "customer.h"
 
 string Customer::get_name() const{
