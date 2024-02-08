@@ -1,3 +1,9 @@
+/** @file account.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The implementation file of "account.h".
+*/
+
 #include "account.h"
 #include<cstdlib>
 
@@ -16,6 +22,16 @@ vector<Transaction> Account::get_transaction(){
 Account_type Account::get_account_type(){
     return account_type;
  }
+void Account::set_customer(Customer* c){
+    customer = c;
+}
+void Account::set_balance(double b){
+    cout << "acc setbalance "<< b <<endl;
+    balance = b;
+}
+void Account::set_Transaction(Transaction transaction){
+    transaction_array.push_back(transaction);
+}
 void Account::createAccount(Customer* c,Account_type accType){
     // Providing a seed value
 	srand((unsigned) time(NULL));
@@ -26,16 +42,6 @@ void Account::createAccount(Customer* c,Account_type accType){
     customer = c;
     balance = 0;
     account_type = accType;
-}
-void Account::set_customer(Customer* c){
-    customer = c;
-}
-void Account::set_balance(double b){
-    cout << "acc setbalance "<< b <<endl;
-    balance = b;
-}
-void Account::set_Transaction(Transaction transaction){
-    transaction_array.push_back(transaction);
 }
 string Account::to_string(){
     return "";
