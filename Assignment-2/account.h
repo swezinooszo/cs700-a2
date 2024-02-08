@@ -41,23 +41,23 @@ class Account{
             /** Gets the customer.
              * @return the customer as an object
             */
-            Customer* get_customer();
+            Customer* get_customer() const;
              /** Gets the bank account's balance of the customer.
              * @return the balance as a double value
             */
-            double get_balance();
+            double get_balance() const;
              /** Gets the bank account number of the customer.
              * @return the account number as an integer value
             */
-            int get_account_number();
+            int get_account_number() const;
              /** Gets the transactions which customer made.
              * @return the transactions as an array
             */
-            vector<Transaction> get_transaction();
+            vector<Transaction> get_transaction() const;
              /** Gets the account type.
              * @return an enum Account_type value. 
             */
-            Account_type get_account_type();
+            Account_type get_account_type() const;
 
             // Modifier Functions
             /** Sets the customer field.
