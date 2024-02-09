@@ -1,4 +1,4 @@
-/** @file saving_account.cpp
+/** @file main.cpp
 *   @author Swe Zin Oo
 *   @date 8 Feb 2024
 *   @brief The "main.cpp" file serves as the program entry point. All functions, such as adding accounts, making deposits, making withdrawals, 
