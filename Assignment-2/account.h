@@ -79,6 +79,5 @@ class Account{
              * @param accountType the type of customer 
             */
             void createAccount(Customer* customer,Account_type accountType);
-            string to_string();
 };
 #endif
