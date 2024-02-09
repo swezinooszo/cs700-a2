@@ -1,3 +1,9 @@
+/** @file saving_account.cpp
+*   @author Swe Zin Oo
+*   @date 8 Feb 2024
+*   @brief The "main.cpp" file serves as the program entry point. All functions, such as adding accounts, making deposits, making withdrawals, 
+*          and checking accounts, originate from this location.
+*/
 #include <iostream>
 #include "adult.h"
 #include <string>
@@ -215,7 +221,7 @@ int main(){
                 else{
                     //// ****** make withdrawl  ********//
                     double account_balance = bank.make_withdrawl(accountNumber,amount,date);
-                    cout << "Withdrawl from " << accountNumber << " amount: $" << amount << " on " << date << " new balance: $" << account_balance << endl;
+                    cout << "Withdraw from " << accountNumber << " amount: $" << amount << " on " << date << " new balance: $" << account_balance << endl;
                 }
             }
         } 
@@ -239,7 +245,7 @@ int main(){
              }
              //// retrieve account info: account number, balance, customer details
              int account_number = a->get_account_number();
-             int account_balance =   a->get_balance();
+             double account_balance =   a->get_balance();
              Customer* customer = a->get_customer();
              string customer_name = customer->get_name();
         
@@ -247,7 +253,7 @@ int main(){
              cout << "Account: " << account_number << endl;
              cout << "Owner: " << customer_name << endl;
              cout << "Type of customer: " << customer_type << endl;
-             cout << "Balance: " << account_balance << endl;
+             cout << "Balance: $" << account_balance << endl;
              //// ** show Bank Transaction  **** ////
              vector<Transaction> transaction_list =   a->get_transaction();
              for (auto transaction : transaction_list){
@@ -262,4 +268,3 @@ int main(){
 
     return 0;
 }
-//g++ main.cpp transaction.cpp customer.cpp checking_account.cpp saving_account.cpp bank.cpp account.cpp bankUtil.cpp
