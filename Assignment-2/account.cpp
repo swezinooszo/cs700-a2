@@ -26,7 +26,6 @@ void Account::set_customer(Customer* c){
     customer = c;
 }
 void Account::set_balance(double b){
-    cout << "acc setbalance "<< b <<endl;
     balance = b;
 }
 void Account::set_Transaction(Transaction transaction){
