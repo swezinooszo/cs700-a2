@@ -1,7 +1,7 @@
 /** @file bank.cpp
 *   @author Swe Zin Oo
 *   @date 8 Feb 2024
-*   @brief The implementation file of "bank.h".
+*   @brief  The implementation file of "bank.h".
 */
 
 #include <iostream>
@@ -18,11 +18,6 @@
 #include "student.h"
 
 
-void Bank::add_account(Account* a){
-    // add account to acccount array;
-    accounts.push_back(a);
-}
-
 std::vector<Account*> Bank::get_accounts() const{
     // get account from account array;
     return accounts;
@@ -38,6 +33,11 @@ Account* Bank::get_account(int accountNumber) const{
 
     return a;
  }
+
+void Bank::add_account(Account* a){
+    // add account to acccount array;
+    accounts.push_back(a);
+}
 
 double Bank::make_deposit(int accountNumber,double amount,string depositDateString){
     double account_balance;
