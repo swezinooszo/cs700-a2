@@ -67,14 +67,14 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                 Customer_type customerType = customer->get_customer_type();
                 if(customerType == SENIOR){
                     Senior* senior = dynamic_cast<Senior*>(customer);
-                    interest_rate = senior->SAVINGS_INTEREST;
+                    interest_rate = senior->get_saving_interest();
                 }else if(customerType == ADULT){
-                     cout << "Adult saving interest" << endl;
                      Adult* adult = dynamic_cast<Adult*>(customer);
-                    interest_rate = adult->SAVINGS_INTEREST;
+                    interest_rate = adult->get_saving_interest();
+                     cout << "Adult saving interest " << adult->get_saving_interest() << endl;
                 }else{
                      Student* student = dynamic_cast<Student*>(customer);
-                    interest_rate = student->SAVINGS_INTEREST;
+                    interest_rate = student->get_saving_interest();
                 }
 
                 //// find transaction's date which hold latest amount to calculate interest
@@ -146,13 +146,13 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                 Customer_type customerType = customer->get_customer_type();
                 if(customerType == SENIOR){
                     Senior* senior = dynamic_cast<Senior*>(customer);
-                    interest_rate = senior->CHECKING_INTEREST;
+                    interest_rate = senior->get_checking_interest();
                 }else if(customerType == ADULT){
                      Adult* adult = dynamic_cast<Adult*>(customer);
-                    interest_rate = adult->CHECKING_INTEREST;
+                    interest_rate = adult->get_checking_interest();
                 }else{
                      Student* student = dynamic_cast<Student*>(customer);
-                    interest_rate = student->CHECKING_INTEREST;
+                    interest_rate = student->get_checking_interest();
                 }
 
                  //// find transaction's date which hold latest amount to calculate interest
@@ -238,13 +238,13 @@ bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmo
                     Customer_type customerType = customer->get_customer_type();
                     if(customerType == SENIOR){
                         Senior* senior = dynamic_cast<Senior*>(customer);
-                        overdraft_penalty_amount = senior->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = senior->get_overdraft_penalty_charge();
                     }else if(customerType == ADULT){
                         Adult* adult = dynamic_cast<Adult*>(customer);
-                        overdraft_penalty_amount = adult->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = adult->get_overdraft_penalty_charge();
                     }else{
                         Student* student = dynamic_cast<Student*>(customer);
-                        overdraft_penalty_amount = student->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = student->get_overdraft_penalty_charge();
                     } 
 
                     //// ***  Charge Overdraft Penalty **** //// 
@@ -278,13 +278,13 @@ bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmo
                     Customer_type customerType = customer->get_customer_type();
                     if(customerType == SENIOR){
                         Senior* senior = dynamic_cast<Senior*>(customer);
-                        overdraft_penalty_amount = senior->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = senior->get_overdraft_penalty_charge();
                     }else if(customerType == ADULT){
                         Adult* adult = dynamic_cast<Adult*>(customer);
-                        overdraft_penalty_amount = adult->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = adult->get_overdraft_penalty_charge();
                     }else{
                         Student* student = dynamic_cast<Student*>(customer);
-                        overdraft_penalty_amount = student->OVERDRAFT_PENALTY;
+                        overdraft_penalty_amount = student->get_overdraft_penalty_charge();
                     } 
 
                     //// ***  Charge Overdraft Penalty **** //// 
@@ -330,13 +330,14 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 Customer_type customerType = customer->get_customer_type();
                 if(customerType == SENIOR){
                     Senior* senior = dynamic_cast<Senior*>(customer);
-                    interest_rate = senior->SAVINGS_INTEREST;
+                    interest_rate = senior->get_saving_interest();
                 }else if(customerType == ADULT){
                     Adult* adult = dynamic_cast<Adult*>(customer);
-                    interest_rate = adult->SAVINGS_INTEREST;
+                    interest_rate = adult->get_saving_interest();
+                    cout << "adult saving interest "<< adult->get_saving_interest() ;
                 }else{
                     Student* student = dynamic_cast<Student*>(customer);
-                    interest_rate = student->SAVINGS_INTEREST;
+                    interest_rate = student->get_saving_interest();
                 }
      
                 //// find transaction's date which hold latest amount to calculate interest
@@ -389,16 +390,16 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 Customer_type customerType = customer->get_customer_type();
                 if(customerType == SENIOR){
                     Senior* senior = dynamic_cast<Senior*>(customer);
-                    interest_rate = senior->CHECKING_INTEREST;
-                    check_charge_cents = senior->CHECK_CHARGE;
+                    interest_rate = senior->get_checking_interest();
+                    check_charge_cents = senior->get_check_charge();
                 }else if(customerType == ADULT){
                     Adult* adult = dynamic_cast<Adult*>(customer);
-                    interest_rate = adult->CHECKING_INTEREST;
-                    check_charge_cents = adult->CHECK_CHARGE;
+                    interest_rate = adult->get_checking_interest();
+                    check_charge_cents = adult->get_check_charge();
                 }else{
                      Student* student = dynamic_cast<Student*>(customer);
-                     interest_rate = student->CHECKING_INTEREST;
-                     check_charge_cents = student->CHECK_CHARGE;
+                     interest_rate = student->get_checking_interest();
+                     check_charge_cents = student->get_check_charge();
                 }
      
                 //// find transaction's date which hold latest amount to calculate interest
