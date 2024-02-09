@@ -6,6 +6,7 @@
 #define TRANSACTION_H
 #include "Date.h"
 #include <iostream>
+
 using namespace std;
 
 /** Transaction_type is an enum class which represents different types of transactions */
@@ -69,7 +70,7 @@ class Transaction{
          /** Gets the details of transaction as a string
          * @return  a string value which returns all the member variables 
         */ 
-        string to_string()  ;
+        string to_string() const ;
     
 };
 #endif
