@@ -6,6 +6,7 @@
 #include "transaction.h"
 #include <string>
 #include <iomanip>
+#include <sstream>
 
 using namespace std;
 
@@ -21,7 +22,9 @@ double Transaction::get_balance() const{
 Date Transaction::get_date() const{
      return date;
 }
-string Transaction::to_string()  {
+
+string Transaction::to_string() const {
+        ostringstream result;
         string transType;
         if(transaction_type == DEP){
             transType = "DEP";
@@ -32,7 +35,7 @@ string Transaction::to_string()  {
         }else if(transaction_type == CHKCHG){
              transType = "CHKCHG";
         }else if(transaction_type == OD_PEN){
-             transType = "OD_PEN";
+             transType = "OD PEN";
         }
      
           // Convert 'amount' double value to string with two decimal places
@@ -48,5 +51,14 @@ string Transaction::to_string()  {
           if (decimalPos1 != std::string::npos && decimalPos1 + 3 < strbalance.size()) {
                strbalance.resize(decimalPos1 + 3);
           }
-       return  transType + "  " + date.to_string() + "  $  " + stramount +  "  $  " + strbalance;
+
+          result
+          << setw(6) << right << transType << " " 
+          << setw(10) << right << date.to_string() << " " 
+          << "$ " 
+          << setw(6) << right << stramount << " " 
+          << "$ " 
+          << setw(6) << right << strbalance ;
+
+     return result.str();
 }
