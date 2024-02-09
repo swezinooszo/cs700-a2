@@ -33,7 +33,6 @@ Account* Bank::get_account(int accountNumber) const{
         for (auto account : accounts) {
             if(accountNumber == account->get_account_number()){
                 a = account;
-                cout << "acc number found balance "<< a->get_balance() << endl;
             }
         }
 
@@ -41,7 +40,6 @@ Account* Bank::get_account(int accountNumber) const{
  }
 
 double Bank::make_deposit(int accountNumber,double amount,string depositDateString){
-    cout << "aBank::make_deposit function size "<< accounts.size() << endl;
     double account_balance;
     Account* a;
     //// retrieve account from account number 
@@ -52,10 +50,8 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
     }
     //// *** if account is Saving Account **** ////
     if(a->get_account_type() == SAVING){
-        cout << "acc type is saving" << endl;
         if(!accounts.empty()){
             if (Saving_Account* savingAccount = dynamic_cast<Saving_Account*>(a)){
-                cout << "get saving acc" << endl;
 
                 //// *** convert dateString to dateFormat **** ////
                 Date depositDate = convertStringToDate(depositDateString,'-');
@@ -71,7 +67,6 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                 }else if(customerType == ADULT){
                      Adult* adult = dynamic_cast<Adult*>(customer);
                     interest_rate = adult->get_saving_interest();
-                     cout << "Adult saving interest " << adult->get_saving_interest() << endl;
                 }else{
                      Student* student = dynamic_cast<Student*>(customer);
                     interest_rate = student->get_saving_interest();
@@ -97,9 +92,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                     Date startDate;
                     double balance = a->get_balance();
                     for(auto transaction : transaction_list){
-                        cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                         if(transaction.get_balance() == a->get_balance()){ 
-                            cout << " lastly, get transaction balance "<< transaction.get_balance() << endl;
                             //// get the date 
                             startDate = transaction.get_date();
                         }
@@ -119,23 +112,20 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
 
                     // ****** add deposit transaction ************///
                     double last_balance = savingAccount -> get_balance();
-                    cout << "get saving acc format date " << depositDate;
                     Transaction transaction(DEP,amount,last_balance,depositDate);
                     savingAccount->set_Transaction(transaction);
                     account_balance = transaction.get_balance();
                 }
             }else{
-                 cout << "not get saving acc" << endl;
+                
             }
         }
 
     } 
      //// *** if account is Checking Account **** ////
     else if(a->get_account_type() == CHECKING){
-        cout << "acc type is checking" << endl;
         if(!accounts.empty()){
             if (Checking_Account* checkingAccount = dynamic_cast<Checking_Account*>(a)){
-                cout << "get checking acc" << endl;
                 //// *** convert dateString to dateFormat **** ////
                 Date depositDate = convertStringToDate(depositDateString,'-');
 
@@ -174,9 +164,7 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                     Date startDate;
                     double balance = a->get_balance();
                     for(auto transaction : transaction_list){
-                        cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                         if(transaction.get_balance() == a->get_balance()){ 
-                            cout << " lastly, get transaction balance "<< transaction.get_balance() << endl;
                             //// get the date 
                             startDate = transaction.get_date();
                         }
@@ -199,11 +187,9 @@ double Bank::make_deposit(int accountNumber,double amount,string depositDateStri
                     Transaction transaction(DEP,amount,last_balance,depositDate);
                     checkingAccount->set_Transaction(transaction);
                     account_balance = transaction.get_balance();
-                    cout << "transaction.get_balance() "<< transaction.get_balance()<< endl;
                 }
 
             }else{
-                 cout << "not get checking acc" << endl;
             }
         }
     }
@@ -222,7 +208,6 @@ bool Bank::check_withdrawable_amount_or_not(int accountNumber,double withdrawAmo
     }
     //// *** if account is Saving Account **** ////
      if(a->get_account_type() == SAVING){
-        cout << "acc type is saving" << endl;
         if(!accounts.empty()){
             if (Saving_Account* savingAccount = dynamic_cast<Saving_Account*>(a)){
                  //// *** convert withdrawDateString to dateFormat **** ////
@@ -334,7 +319,6 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 }else if(customerType == ADULT){
                     Adult* adult = dynamic_cast<Adult*>(customer);
                     interest_rate = adult->get_saving_interest();
-                    cout << "adult saving interest "<< adult->get_saving_interest() ;
                 }else{
                     Student* student = dynamic_cast<Student*>(customer);
                     interest_rate = student->get_saving_interest();
@@ -346,9 +330,7 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 Date startDate;
                 double balance = a->get_balance();
                 for(auto transaction : transaction_list){
-                    cout << "transaction balance "<< transaction.get_balance() << " acc balance " << a->get_balance()<< endl ;
                     if(transaction.get_balance() == a->get_balance()){
-                        cout << " lastly, get transaction balance "<< transaction.get_balance() << endl;
                         //// get the date
                         startDate = transaction.get_date();
                     }
@@ -435,14 +417,12 @@ double Bank::make_withdrawl(int accountNumber,double withdrawAmount,string withd
                 checkingAccount -> deduct_check_charge(check_charge_cents);
                 //// ****** add check charge transaction ************////
                 double lastest_balance = checkingAccount -> get_balance();
-                 cout << "checkingAccount -> get_balance() lastest_balance" << lastest_balance << endl;
                 Transaction transaction3(CHKCHG,check_charge_cents,lastest_balance,withdrawDate);
                 checkingAccount->set_Transaction(transaction3);
                 account_balance = transaction3.get_balance();
-                 cout << "transaction3.get_balance() " << transaction3.get_balance() << endl;
 
             }else{
-                 cout << "not get checking acc" << endl;
+                
             }
         }
       
