@@ -54,7 +54,6 @@ int calculateDayCount(const Date& date) {
 double calculateInterest(double amount, double rate, int numberOfDays) {
     // Convert days to years (assuming 365 days in a year)
     double years = numberOfDays / 365.0;
-    cout << "years "<< years << endl; 
     // Calculate interest
     return amount * rate * years;
 }
