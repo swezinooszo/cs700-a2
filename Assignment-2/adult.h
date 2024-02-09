@@ -12,7 +12,7 @@
  * fixed rate for saving interest, checking interest, checking charge and overdraft penaly for adult customer.
 */
 class Adult: public Customer {
-        public:
+        private:
         // Constants
         /** annual saving account interest rate */
         const double SAVINGS_INTEREST = 0.03;	
@@ -22,5 +22,25 @@ class Adult: public Customer {
         const double CHECK_CHARGE = 0.03;          
          /** overdraf penalty in dollar */
         const double OVERDRAFT_PENALTY = 25.0;      
+
+        public:
+        //Accessor Functions
+         /** Gets the saving interest rate
+          * @return saving interest rate as a double
+        */
+        double get_saving_interest() const;
+        /** Gets the checking interest rate
+          * @return checking interest rate as a double
+        */
+        double get_checking_interest() const;
+        /** Gets the check charge 
+          * @return check charge as a double
+        */
+        double get_check_charge() const;
+        /** Gets the overdraft penalty
+          * @return overdraft penalty as a double
+        */
+        double get_overdraft_penalty_charge() const;
+
 };
 #endif
