@@ -37,12 +37,9 @@ void Account::createAccount(Customer* c,Account_type accType){
 	srand((unsigned) time(NULL));
 
 	// Get a random number
-	int random = rand() % 10;
+	int random = rand() % 100;
     account_number = random;
     customer = c;
     balance = 0;
     account_type = accType;
-}
-string Account::to_string(){
-    return "";
 }
