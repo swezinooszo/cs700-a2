@@ -2,7 +2,7 @@
 *   @author Swe Zin Oo
 *   @date 8 Feb 2024
 *   @brief This is the utility class of this banking program. This includes all the necesary functions which is used in bank transactions such as
-*   making deposit, making withdrawal, calculating interest and charge overdraft penalty
+*   making deposits, making withdrawals, calculating interests and charge overdraft penalties
 */
 
 #pragma once
