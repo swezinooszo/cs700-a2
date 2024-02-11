@@ -336,12 +336,13 @@ The location of the external document is cs700-a2/Assigment-2/doc/html/index.htm
 [swezinoo410@gmail.com](mailto:swezinoo410@gmail.com)
 
 ### Additional Note
-#### Customer Class:
+The newly created data fields and functions which are not specified in the question for the needs of the program:
+##### Customer Class:
 An enum **customer_type** is added to this class to differentiate later for which type of customer is created. (Savings and checking interest rates are different for each customer type.)
 
-#### Savings Account Class:
+##### Savings Account Class:
 A **charge_overdraft_penalty()** function is created to charge overdraft penalties for exceeding withdrawal amounts.
 
-#### Checking Account Class:
+##### Checking Account Class:
 A **charge_overdraft_penalty()** function is created to charge overdraft penalties for exceeding withdrawal amounts.
-A **deduct_check_charge()** function is created for check charges for checking accounts."
+A **deduct_check_charge()** function is created for check charges for checking accounts.
