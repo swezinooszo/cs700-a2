@@ -192,8 +192,8 @@ Select:
 #### Check Charge for Checking Account
 For withdrawal from a checking account, the program applies **a ‘check charge’** to the user. Below are the sample outputs of check charges for different user types.
 
-**Senior**
-0.01 cents for withdrawl**
+Senior
+(0.01 cents for withdrawl)
 ```
 Account: 94
 Owner: Kate
@@ -203,8 +203,8 @@ Balance: $899.99
           WD 2024-01-10 $ 100.00 $ 900.00
       CHKCHG 2024-01-10 $   0.01 $ 899.99
 ```
-**Adult**
-0.03 cents for withdrawl**
+Adult
+(0.03 cents for withdrawl)
 ```
 Account: 7
 Owner: William
@@ -214,8 +214,8 @@ Balance: $899.97
           WD 2024-01-10 $ 100.00 $ 900.00
       CHKCHG 2024-01-10 $   0.03 $ 899.97
 ```
-**Student**
-0.02 cents for withdrawl
+Student
+(0.02 cents for withdrawl)
 ```
 Account: 67
 Owner: Sam
@@ -228,9 +228,9 @@ Balance: $899.98
 #### Interest Rate calculation 
 The interest amount is calculated using the **annual rate** and based on the **number of days** that the balance has been held. Below are the sample output of calculated **2-years interest rates** for different user types.
 
-**Senior**
+##### Senior
 Saving Account
-0.04 interest rate**
+(0.04 interest rate)
 ```
 Account: 86
 Owner: Kate
@@ -240,8 +240,7 @@ Balance: $2260
       INT CR 2020-10-10 $ 160.00 $ 2160.00
          DEP 2020-10-10 $ 100.00 $ 2260.00
 ```
-Checking Account
-0.01 interest rate
+Checking Account (0.01 interest rate)
 ```
 Account: 87
 Owner: Kate
@@ -251,9 +250,8 @@ Balance: $2140
       INT CR 2020-10-10 $  40.00 $ 2040.00
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
-**Adult**
-Saving Account
-0.03 interest rate
+##### Adult
+Saving Account (0.03 interest rate)
 ```
 
 Account: 36
@@ -264,8 +262,7 @@ Balance: $2220
       INT CR 2020-10-10 $ 120.00 $ 2120.00
          DEP 2020-10-10 $ 100.00 $ 2220.00
 ```
-Checking Account
-0.01 interest rate
+Checking Account (0.01 interest rate)
 ```
 Account: 27
 Owner: William
@@ -276,9 +273,8 @@ Balance: $2140
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
 
-**Student**
-Saving Account
-0.04 interest rate
+##### Student
+Saving Account (0.04 interest rate)
 ```
 Account: 94
 Owner: Sam
@@ -288,8 +284,7 @@ Balance: $2260
       INT CR 2020-10-10 $ 160.00 $ 2160.00
          DEP 2020-10-10 $ 100.00 $ 2260.00
 ```
-Checking Account
-0.01 interest rate
+Checking Account (0.01 interest rate)
 ```
 Account: 92
 Owner: Sam
