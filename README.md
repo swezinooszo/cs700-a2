@@ -193,7 +193,7 @@ Select:
 For withdrawal from a checking account, the program applies **a ‘check charge’** to the user. Below are the sample outputs of check charges for different user types.
 
 **Senior**
-**0.01 cents for withdrawl**
+0.01 cents for withdrawl**
 ```
 Account: 94
 Owner: Kate
@@ -204,7 +204,7 @@ Balance: $899.99
       CHKCHG 2024-01-10 $   0.01 $ 899.99
 ```
 **Adult**
-**0.03 cents for withdrawl**
+0.03 cents for withdrawl**
 ```
 Account: 7
 Owner: William
@@ -215,7 +215,7 @@ Balance: $899.97
       CHKCHG 2024-01-10 $   0.03 $ 899.97
 ```
 **Student**
-**0.02 cents for withdrawl**
+0.02 cents for withdrawl
 ```
 Account: 67
 Owner: Sam
@@ -229,8 +229,8 @@ Balance: $899.98
 The interest amount is calculated using the **annual rate** and based on the **number of days** that the balance has been held. Below are the sample output of calculated **2-years interest rates** for different user types.
 
 **Senior**
-- **Saving Account**
-**0.04 interest rate**
+Saving Account
+0.04 interest rate**
 ```
 Account: 86
 Owner: Kate
@@ -240,8 +240,8 @@ Balance: $2260
       INT CR 2020-10-10 $ 160.00 $ 2160.00
          DEP 2020-10-10 $ 100.00 $ 2260.00
 ```
-- **Checking Account**
-**0.01 interest rate**
+Checking Account
+0.01 interest rate
 ```
 Account: 87
 Owner: Kate
@@ -252,8 +252,8 @@ Balance: $2140
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
 **Adult**
-- **Saving Account**
-**0.03 interest rate**
+Saving Account
+0.03 interest rate
 ```
 
 Account: 36
@@ -264,8 +264,8 @@ Balance: $2220
       INT CR 2020-10-10 $ 120.00 $ 2120.00
          DEP 2020-10-10 $ 100.00 $ 2220.00
 ```
-- **Checking Account**
-**0.01 interest rate**
+Checking Account
+0.01 interest rate
 ```
 Account: 27
 Owner: William
@@ -277,8 +277,8 @@ Balance: $2140
 ```
 
 **Student**
-- **Saving Account**
-**0.04 interest rate**
+Saving Account
+0.04 interest rate
 ```
 Account: 94
 Owner: Sam
@@ -288,8 +288,8 @@ Balance: $2260
       INT CR 2020-10-10 $ 160.00 $ 2160.00
          DEP 2020-10-10 $ 100.00 $ 2260.00
 ```
-- **Checking Account**
-**0.01 interest rate**
+Checking Account
+0.01 interest rate
 ```
 Account: 92
 Owner: Sam
@@ -306,7 +306,7 @@ The program will charge **an overdraft penalty** to user if there are **insuffic
 ```
 Overdraft Penalty is charged from 27 amount: $25 on 2020-10-10 new balance: $75
 ```
-**Transaction History**
+Transaction History sample
 ```
 Account: 27
 Owner: James
@@ -322,7 +322,7 @@ If the account balance becomes **negative**, the user is prohibited from withdra
 ```
 The balance from account 27 is negative -20. Withdrawal failed.
 ```
-**Transaction History**
+Transaction History sample
 ```
 Account: 27
 Owner: James
