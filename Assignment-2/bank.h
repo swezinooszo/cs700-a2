@@ -38,17 +38,17 @@ class Bank{
          * @param account an account pointer object
         */
         void add_account(Account* account);
-        /** make deposit to the bank. Each time a customer makes a deposit, the interest amount is calculated according to the annual rate and the number of days
-         *  the account's balance has been held. Subsequently, the interest amount is added to the balance of the account.
+        /** make deposit to the bank. Each time a customer makes a deposit, first the interest amount is calculated and added to the balance of the account.
+         * Interest amount is calculated according to the annual rate and the number of days the account's balance has been held.
          * @param accountNumber the account number to be deposited
          * @param amount the amount to be deposited
          * @param date the date to be deposited
          * @return the balance of account after deposited as a double value
         */
         double make_deposit(int accountNumber,double amount,string date);
-        /** make withdrawl from the bank.Each time a customer makes a withdrawl, the interest amount is calculated according to the annual rate and the number of days
-         *  the account's balance has been held. This interest amount is then added to the account's balance. Additionally, if the account is a checking account, 
-         *  a checking charge is calculated and deducted from the account's balance.
+        /** make withdrawl from the bank.Each time a customer makes a withdrawl, first the interest amount is calculated and added to the account's balance.
+         * Interest amount is calculated according to the annual rate and the number of days the account's balance has been held. 
+         * Additionally, if the account is a checking account, a checking charge is calculated and deducted from the account's balance.
          * @param accountNumber the account number to be withdrawn
          * @param amount the amount to be withdrawn
          * @param date the withdrawl date
