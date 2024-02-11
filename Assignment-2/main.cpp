@@ -2,7 +2,7 @@
 *   @author Swe Zin Oo
 *   @date 8 Feb 2024
 *   @brief The "main.cpp" file serves as the program entry point. All functions, such as adding accounts, making deposits, making withdrawals, 
-*          and checking accounts, originate from this location.
+*          calculating interests, charging overdraft penalties and checking accounts, originate from this location.
 */
 #include <iostream>
 #include "adult.h"
@@ -188,20 +188,20 @@ int main(){
             cout << "Enter the date yyyy-mm-dd ";
             cin >> date;
 
-            //// first check if there are sufficient funds or not  
+            //// Retrieve account first which is equal to entered account number to check whether there are sufficient funds 
             Account* a;
             for (auto account : bank.get_accounts()) {
                 if(accountNumber == account->get_account_number()){
                     a = account;
                 }
             }
-            //// if balance is negative, disallow withdrawing amount 
+            //// if balance is negative, disallow withdrawing amount and display the message
             if(a->get_balance() <0){
                 cout << "The balance from account "<< accountNumber << " is negative "<< a->get_balance() << ". Withdrawal failed." << endl;
             }
             //// if balance is positive, allow withdrawing amount 
             else {
-                //// if balance is positive but withdrawl amount is exceed than balance, then overdraft penalty is charged and 'isChargedOverDraftPenalty' is set true 
+                //// 1. if balance is positive but withdrawl amount is exceed than balance, then overdraft penalty is charged and return 'isChargedOverDraftPenalty' as true 
                 bool isChargedOverDraftPenalty = bank.check_withdrawable_amount_or_not(accountNumber,amount,date);
                 if(isChargedOverDraftPenalty){
                     cout << "Insufficient funds. Withdrawal failed." << endl;
@@ -217,7 +217,7 @@ int main(){
                     cout << "Overdraft Penalty is charged from " << accountNumber << " amount: $" << amount << " on " << date << " new balance: $" << balance << endl;
                     
                 }
-                //// if amount is sufficient and 'isChargedOverDraftPenalty' is false,  
+                //// 2. if balance is positive and withdrawl there are sufficient funds, return 'isChargedOverDraftPenalty' as false. And make below step "withdrawl". 
                 else{
                     //// ****** make withdrawl  ********//
                     double account_balance = bank.make_withdrawl(accountNumber,amount,date);
@@ -254,7 +254,7 @@ int main(){
              cout << "Owner: " << customer_name << endl;
              cout << "Type of customer: " << customer_type << endl;
              cout << "Balance: $" << account_balance << endl;
-             //// ** show Bank Transaction  **** ////
+             //// ** show Bank Transactions history  **** ////
              vector<Transaction> transaction_list =   a->get_transaction();
              for (auto transaction : transaction_list){
               cout << "      " << transaction.to_string() << endl;
