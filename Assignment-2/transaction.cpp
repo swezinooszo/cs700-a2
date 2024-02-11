@@ -1,7 +1,7 @@
-/** @file tansaction.cpp
+/** @file transaction.cpp
 *   @author Swe Zin Oo
 *   @date 8 Feb 2024
-*   @brief The implementation file of "Transaction.h"
+*   @brief The implementation file of "transaction.h"
 */
 #include "transaction.h"
 #include <string>
