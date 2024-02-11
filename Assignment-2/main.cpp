@@ -20,8 +20,9 @@
 using namespace std;
 
 int main(){
-    bool isExit;
+    bool isExit = false;
     Bank bank;
+
 
     while (!isExit)
     {
