@@ -74,7 +74,8 @@ class Account{
             void set_Transaction(Transaction transaction);
 
             // Other Functions
-             /** Create an account 
+             /** Create an account. The function is called when a customer create saving or checking account.
+              * A random number is generated for the account number when creating an account
              * @param customer the customer belong to the account 
              * @param accountType the type of customer 
             */
