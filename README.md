@@ -1,4 +1,4 @@
-# Task 2
+# Assignment 2
 
 ## About The Project
 ### A Banking Program
