@@ -34,9 +34,9 @@ void Account::set_Transaction(Transaction transaction){
 void Account::createAccount(Customer* c,Account_type accType){
     // Providing a seed value
 	srand((unsigned) time(NULL));
-
-	// Get a random number
+	// Get a random number for bank account number
 	int random = rand() % 100;
+    //assign bank account number
     account_number = random;
     customer = c;
     balance = 0;
