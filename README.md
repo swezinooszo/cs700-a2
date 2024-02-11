@@ -1,7 +1,5 @@
-# Assignment 2
-
-## About The Project
-### A Banking Program
+# About The Project
+## A Banking Program
 
 This is a small banking application where users can create their own accounts, make deposits and withdraw money. When opening an account, users can choose between different types, such as **savings** and **checking accounts**. Additionally,  user types are categorised into three groups: **Senior, Adult** and **Student**. Naturally, the interest rates for savings and check accounts vary based on the user’s type. Below are the annual interest rates for different user types:
 
@@ -30,22 +28,22 @@ In some cases, if the withdrawn amount exceeds than account balance (meaning the
 Furthermore, if the account balance becomes **negative** by any reason, the user will also be **prohibited from withdrawing money** from the account.
 
 
-## Build With
+# Build With
 The c++ program is built using Visual Studio Code on MacOS.
 
-## Getting Started
+# Getting Started
 
-### Prerequisites 
+## Prerequisites 
 1. An integrated development environment (IDE) capable of running c++ programs, such as CLion, Visual Studio Code and Eclipse installed.
 2. Mac OS or Window OS.
 3. An internet connection to check out the project from the repository.
 
-### Installation
+## Installation
 1. Clone the repo
     git clone https://github.com/swezinooszo/cs700-a2.git
 
 
-### Usage
+## Usage
 Please follow the below steps to run the program:
  
 1. Open Assignment-2 project from IDE
@@ -61,7 +59,7 @@ At the start of the program, the user will be prompted with 5 options:
 	3: Check Account
 	4: Exit
 
-#### 0: Add Account
+### 0: Add Account
 To open an account,  the user must enter **‘0’**. Following that, the program will prompt the user to enter customer details including **Name, Address, Age** and **Phone Number**.
 
 ```
@@ -101,7 +99,7 @@ Account: 91 Added
 
 In this example, the program has created account number 91, which is a saving account belonging to an adult customer.
 
-#### 1: Make Deposit
+### 1: Make Deposit
 To make a deposit, the user must enter number **‘1’**. Following that, the user needs to input the **account number, deposit amount** and **deposit date**.
 ```
 Select: 
@@ -122,7 +120,7 @@ After entering the date, the program will display the **transaction details** fo
 Deposit in 91 amount: $2000 on 2018-10-10 new balance: $2000
 ```
 
-#### 2: Make Withdrawl
+### 2: Make Withdrawl
 The user must enter **'2'** to make a withdrawal. After that, they need to enter the **account number, withdrawal amount** and **withdrawal date**, which are the same required information as for making a deposit.
 ```
 Select: 
@@ -142,7 +140,7 @@ After entering the date, the program will display **transaction details** for th
 Withdraw from 91 amount: $100 on 2020-10-10 new balance: $2020.16
 ```
 
-#### 3: Check Account
+### 3: Check Account
 Users can check all of their account transactions by entering value **‘3’**. Only the account number is required for this operation.
 ```
 Select: 
@@ -177,7 +175,7 @@ When checking transaction history, acronyms will be used as follows:
 - **CHKCHG** stands for Check Charge.
 - **OD PEN** stands for Overdraft Penalty.
 
-#### 4: Exit
+### 4: Exit
 Finally, after completing all transactions, the user can choose option **4** to exit the program.
 ```
 Select: 
@@ -189,7 +187,7 @@ Select:
 4
 ```
 
-#### Check Charge for Checking Account
+### Check Charge for Checking Account
 For withdrawal from a checking account, the program applies **a ‘check charge’** to the user. Below are the sample outputs of check charges for different user types.
 
 Senior
@@ -225,10 +223,10 @@ Balance: $899.98
           WD 2024-01-10 $ 100.00 $ 900.00
       CHKCHG 2024-01-10 $   0.02 $ 899.98
 ```     
-#### Interest Rate calculation 
+### Interest Rate calculation 
 The interest amount is calculated using the **annual rate** and based on the **number of days** that the balance has been held. Below are the sample output of calculated **2-years interest rates** for different user types.
 
-##### Senior
+#### Senior
 Saving Account
 (0.04 interest rate)
 ```
@@ -250,7 +248,7 @@ Balance: $2140
       INT CR 2020-10-10 $  40.00 $ 2040.00
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
-##### Adult
+#### Adult
 Saving Account (0.03 interest rate)
 ```
 
@@ -273,7 +271,7 @@ Balance: $2140
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
 
-##### Student
+#### Student
 Saving Account (0.04 interest rate)
 ```
 Account: 94
@@ -295,7 +293,7 @@ Balance: $2140
          DEP 2020-10-10 $ 100.00 $ 2140.00
 ```
 
-#### Overdraft Penalty
+### Overdraft Penalty
 The program will charge **an overdraft penalty** to user if there are **insufficient funds** in the account for a withdrawal.
 
 ```
@@ -311,7 +309,7 @@ Balance: $75
       OD PEN 2020-10-10 $  25.00 $  75.00
 ```
 
-#### Prohibition from withdrawal
+### Prohibition from withdrawal
 If the account balance becomes **negative**, the user is prohibited from withdrawing funds from the account. Below is a sample output:
 
 ```
@@ -329,10 +327,10 @@ Balance: $-20
       OD PEN 2020-10-10 $  25.00 $ -20.00
 ```
 
-### External Document
-The location of the external document is cs700-a2/Assigment-2/doc/html/index.html
+# External Document
+The location of the external document is cs700-a2/Assignment-2/doc/html/index.html
 
-### Contact
+# Contact
 [swezinoo410@gmail.com](mailto:swezinoo410@gmail.com)
 
 ### Additional Note
